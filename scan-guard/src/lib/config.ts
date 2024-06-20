@@ -1,7 +1,6 @@
 import TransgateConnect from "@zkpass/transgate-js-sdk";
 
-export const CONTRACT_ADDR =
-	"0x30b6f31dbf80d46c252dc7875a5d4143adda338e40e64a53a863e689a83608";
+export const CONTRACT_ADDR = "0x77d35c666955199a1ebf7424089f29f48a635b349a95614a763a63d62f61779";
 
 export const formatAddress = (addr: string) => {
 	return addr.replace(/^0x/, "0x0");
@@ -30,3 +29,5 @@ export const zkPassVerify = async () => {
 		console.log("transgate error", error);
 	}
 };
+
+export const formatDate = (date: string) => date.split('-').reverse().join('. ');

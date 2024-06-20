@@ -1,13 +1,13 @@
 use starknet::{ContractAddress};
+use scanguard::base::types::{ProductParams};
 
 #[starknet::interface]
-pub trait IProducts<TState> {
-    fn verify(self: @TState, product_id: felt252) -> ByteArray;
+pub trait IProducts<TContractState> {
+    fn verify(self: @TContractState, product_id: felt252) -> ProductParams;
     fn store_product(
-        ref self: TState,
+        ref self: TContractState,
         product_id: felt252,
         ipfs_hash: ByteArray,
         ownable_contract_address: ContractAddress
     );
-    // fn verify(ref self: TState, product_id: felt252, ipfs_hash: ByteArray) -> bool;
 }

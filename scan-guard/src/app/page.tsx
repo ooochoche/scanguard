@@ -1,5 +1,4 @@
 "use client";
-import WalletBar from "@/components/WalletBar";
 import {
 	DiscordIcon,
 	LearnmoreIcon,
@@ -12,11 +11,10 @@ import Link from "next/link";
 import { useEffect, useMemo, useState } from "react";
 import Modal from "./Modal";
 import { useContractWrite, useWaitForTransaction } from "@starknet-react/core";
-import ConnectModal from "./components/ConnectModal";
 import { useAccount } from "@starknet-react/core";
-import AddressBar from "./components/Addressbar";
-import ScanProduct from "./components/Scan";
 import { useParams } from "next/navigation";
+import AddressBar from "@/components/Addressbar";
+import ConnectModal from "@/components/ConnectModal";
 
 export default function Home() {
 	const { address } = useAccount();

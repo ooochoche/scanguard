@@ -11,9 +11,9 @@ import {
 	TelegramIcon,
 	TwitterIcon,
 } from "@/assets/icons";
-import AddressBar from "@/app/components/Addressbar";
-import ScanProduct from "@/app/components/Scan";
-import ConnectModal from "@/app/components/ConnectModal";
+import AddressBar from "@/components/Addressbar";
+import ScanProduct from "@/components/Scan";
+import ConnectModal from "@/components/ConnectModal";
 import { useParams } from "next/navigation";
 
 export default function ScanPage() {

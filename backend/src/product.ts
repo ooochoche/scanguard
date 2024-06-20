@@ -7,13 +7,12 @@ dotenv.config();
 interface Product {
   product_id: string;
   name: string;
+  image: string;
   manufacturer: string;
   manufactureDate: string;
   expiryDate: string;
 }
 
-const ADDRES_REGEX: RegExp = /^0x[0-9a-fA-F]{64}$/;
-const MAX_LENGTH: number = 10000;
 const PINATA_JWT: string = process.env.PINATA_JWT || "";
 
 const pinToIPFS = async (product: Product) => {
@@ -39,10 +38,10 @@ const pinToIPFS = async (product: Product) => {
 };
 
 export const submitProduct = async (req: Request, res: Response) => {
-  const { name, manufacturer, manufactureDate, expiryDate } = req.body;
+  const { name, image, manufacturer, manufactureDate, expiryDate } = req.body;
 
-  if (!name || !manufacturer || !manufactureDate || !expiryDate) {
-    return res.status(400).json({ error: "Missing text or address" });
+  if (!name || !image || !manufacturer || !manufactureDate || !expiryDate) {
+    return res.status(400).json({ error: "Some fields are missing" });
   }
 
   const product_id = generateProductId(10);
@@ -50,6 +49,7 @@ export const submitProduct = async (req: Request, res: Response) => {
   const productData: Product = {
     product_id,
     name,
+    image,
     manufacturer,
     manufactureDate,
     expiryDate

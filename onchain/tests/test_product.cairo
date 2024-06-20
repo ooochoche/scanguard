@@ -30,7 +30,7 @@ fn __setup__() -> (ContractAddress, ContractAddress) {
 
 #[test]
 #[should_panic(expected: ('Caller not owner',))]
-fn test_hash_product_with_incorrect_owner() {
+fn test_store_product_with_incorrect_owner() {
     let (ownable_contract_address, product_contract_address) = __setup__();
     let product_dispatcher = IProductsDispatcher { contract_address: product_contract_address };
 
@@ -39,16 +39,13 @@ fn test_hash_product_with_incorrect_owner() {
     let product_id: felt252 = 1;
     let ipfs_hash: ByteArray = "QmVqyWcuoBpHvt5tT5Gw9eJz2qYJyGKw4NY4yEdFcopK69";
 
-    product_dispatcher.hash_product(product_id, ipfs_hash.clone(), ownable_contract_address);
-
-    let verify_hash = product_dispatcher.verify(product_id, ipfs_hash);
-    assert(verify_hash == true, 'no hashes matched');
+    product_dispatcher.store_product(product_id, ipfs_hash.clone(), ownable_contract_address);
 
     stop_prank(CheatTarget::One(product_contract_address),);
 }
 
 #[test]
-fn test_hash_product_with_correct_hash() {
+fn test_store_product_() {
     let (ownable_contract_address, product_contract_address) = __setup__();
     let product_dispatcher = IProductsDispatcher { contract_address: product_contract_address };
 
@@ -57,36 +54,16 @@ fn test_hash_product_with_correct_hash() {
     let product_id: felt252 = 1;
     let ipfs_hash: ByteArray = "QmVqyWcuoBpHvt5tT5Gw9eJz2qYJyGKw4NY4yEdFcopK69";
 
-    product_dispatcher.hash_product(product_id, ipfs_hash.clone(), ownable_contract_address);
+    product_dispatcher.store_product(product_id, ipfs_hash.clone(), ownable_contract_address);
 
-    let verify_hash = product_dispatcher.verify(product_id, ipfs_hash);
-    assert(verify_hash == true, 'no hashes matched');
-
-    stop_prank(CheatTarget::One(product_contract_address),);
-}
-
-#[test]
-fn test_hash_product_with_incorrect_hash() {
-    let (ownable_contract_address, product_contract_address) = __setup__();
-    let product_dispatcher = IProductsDispatcher { contract_address: product_contract_address };
-    start_prank(CheatTarget::One(product_contract_address), OWNER_ADDR.try_into().unwrap());
-
-    let product_one_id: felt252 = 1;
-    let ipfs_hash_one: ByteArray = "QmVqyWcuoBpHvt5tT5Gw9eJz2qYJyGKw4NY4yEdFcopK69";
-
-    let product_two_id: felt252 = 2;
-    let ipfs_hash_two: ByteArray = "QmVqyWcuoBpHvt5tT5Gw9eJz2qYJyGKw4NY4yEdFcncep5";
-
-    product_dispatcher.hash_product(product_one_id, ipfs_hash_one, ownable_contract_address);
-
-    let verify_hash = product_dispatcher.verify(product_two_id, ipfs_hash_two);
-    assert(verify_hash == false, 'hash matched');
+    let verify_product = product_dispatcher.verify(product_id);
+    assert(verify_product == ipfs_hash, 'no products found');
 
     stop_prank(CheatTarget::One(product_contract_address),);
 }
 
 #[test]
-fn test_hash_multiple_products_with_correct_hashes() {
+fn test_store_multiple_products() {
     let (ownable_contract_address, product_contract_address) = __setup__();
     let product_dispatcher = IProductsDispatcher { contract_address: product_contract_address };
     start_prank(CheatTarget::One(product_contract_address), OWNER_ADDR.try_into().unwrap());
@@ -98,16 +75,16 @@ fn test_hash_multiple_products_with_correct_hashes() {
     let ipfs_hash_two: ByteArray = "QmVqyWcuoBpHvt5tT5Gw9eJz2qYJyGKw4NY4yEdFcncep5";
 
     product_dispatcher
-        .hash_product(product_one_id, ipfs_hash_one.clone(), ownable_contract_address);
+        .store_product(product_one_id, ipfs_hash_one.clone(), ownable_contract_address);
 
-    let verify_product_one_hash = product_dispatcher.verify(product_one_id, ipfs_hash_one);
-    assert(verify_product_one_hash == true, 'no hashes matched');
+    let verify_product_one = product_dispatcher.verify(product_one_id);
+    assert(verify_product_one == ipfs_hash_one, 'no hashes matched');
 
     product_dispatcher
-        .hash_product(product_two_id, ipfs_hash_two.clone(), ownable_contract_address);
+        .store_product(product_two_id, ipfs_hash_two.clone(), ownable_contract_address);
 
-    let verify_product_two_hash = product_dispatcher.verify(product_two_id, ipfs_hash_two);
-    assert(verify_product_two_hash == true, 'no hashes matched');
+    let verify_product_two = product_dispatcher.verify(product_two_id);
+    assert(verify_product_two == ipfs_hash_two, 'no hashes matched');
 
     stop_prank(CheatTarget::One(product_contract_address),);
 }

@@ -44,7 +44,7 @@ export default function Modal({ open, title, children, close }: ModalProps) {
 							leaveFrom="opacity-100 translate-y-0 sm:scale-100"
 							leaveTo="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
 						>
-							<DialogPanel className="relative w-full transform overflow-hidden rounded-lg bg-white px-4 pb-4 pt-5 text-left shadow-xl transition-all sm:my-8 sm:w-full sm:max-w-5xl sm:p-6">
+							<DialogPanel className="relative w-full transform overflow-hidden rounded-lg bg-white px-4 pb-4 pt-5 text-left shadow-xl transition-all sm:my-8 sm:w-full sm:max-w-6xl sm:p-6">
 								<div onClick={close} className="w-[38px] cusor-pointer h-[32px]  rounded-full flex items-center justify-between  px-2 ml-1 bg-primary mt-4 ">	
 										<BackIcon2  />
 								</div>
