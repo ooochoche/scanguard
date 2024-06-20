@@ -1,12 +1,13 @@
-
 # **ScanGuard** Doc
 
 **Get only the best of the best with one scan.**
 
 ## Introduction
+
 **SCANGUARD** is an innovative solution that allows users to authenticate products by scanning their QR codes. Upon scanning, the entire information of the product appears, indicating whether it is genuine or counterfeit. This helps protect consumers from counterfeit goods, ensuring they receive safe and legitimate products.
 
 ## Team Information
+
 - **Kelvin**: Project Manager
 - **Emmanuel Ejembi**: Lead Developer
 - **Flora Osutayi**: UI/UX Designer
@@ -16,6 +17,7 @@
 **Contact Information**: scanguard.team@example.com | [GitHub](#) | [LinkedIn](#)
 
 ## Table of Contents
+
 1. [Project Overview](#project-overview)
 2. [Features](#features)
 3. [Technical Details](#technical-details)
@@ -31,23 +33,28 @@
 ## Project Overview
 
 ### Problem Statement
+
 Counterfeit products are a significant issue, leading to financial losses and potential health risks. There is a need for a reliable method to verify the authenticity of products easily and quickly.
 
 ### Solution
+
 SCANGUARD offers a solution by allowing users to scan a product's QR code to instantly retrieve detailed information about the product's authenticity. This helps consumers make informed decisions and avoid counterfeit goods.
 
 ### Impact
+
 SCANGUARD significantly enhances consumer safety by ensuring the authenticity of pharmaceuticals, cosmetics, and food products, thus protecting against health risks and financial losses. By eliminating counterfeit goods, it boosts legitimate businesses, leading to economic growth and increased market confidence. Consumers are empowered to make informed purchasing decisions, and brands can maintain their integrity.
 
 For regulatory bodies, SCANGUARD simplifies enforcement and provides valuable data to combat counterfeiting effectively. In Africa, SCANGUARD can improve public health, enhance productivity, and drive economic development. Long-term, SCANGUARD fosters sustainable market practices, technological advancement, and boosts confidence in global trade, contributing to overall positive economic and social change.
-## Market Oppurtunity
-* Standing Out from the Competition
-SCANGUARD stands out because of its advanced technology, easy-to-use interface, and detailed product information. By offering instant verification and comprehensive details about products, SCANGUARD provides a better solution compared to traditional methods of checking product authenticity. This competitive edge positions SCANGUARD as a leading player in the fight against fake goods.
-* Financial Losses
-Fake goods result in significant financial losses for both consumers and legitimate businesses. Consumers often end up paying for poor-quality products, while businesses lose revenue and suffer damage to their reputation. By ensuring product authenticity, SCANGUARD protects consumers' money and supports the financial health of legitimate businesses.
 
+## Market Oppurtunity
+
+- Standing Out from the Competition
+  SCANGUARD stands out because of its advanced technology, easy-to-use interface, and detailed product information. By offering instant verification and comprehensive details about products, SCANGUARD provides a better solution compared to traditional methods of checking product authenticity. This competitive edge positions SCANGUARD as a leading player in the fight against fake goods.
+- Financial Losses
+  Fake goods result in significant financial losses for both consumers and legitimate businesses. Consumers often end up paying for poor-quality products, while businesses lose revenue and suffer damage to their reputation. By ensuring product authenticity, SCANGUARD protects consumers' money and supports the financial health of legitimate businesses.
 
 ## Features
+
 - **QR Code Scanning**: Instantly scan a product's QR code to retrieve information.
 - **User-Friendly Interface**: Easy-to-use interface for quick and seamless scanning.
 - **Secure Database**: Robust backend to ensure data integrity and security.
@@ -55,6 +62,7 @@ Fake goods result in significant financial losses for both consumers and legitim
 ## Technical Details
 
 ### Architecture
+
 SCANGUARD uses a microservices architecture with a web frontend and a backend.
 
 - **Frontend**: Built with React Native for cross-platform compatibility.
@@ -62,9 +70,9 @@ SCANGUARD uses a microservices architecture with a web frontend and a backend.
 - **Smart Contract**: Used for secure and transparent contract management.
 - **zkPass**: For zero knowledge product verification
 
-
 ### Tech Stack
-- **Frontend**: React Native
+
+- **Frontend**: Starknet-React
 - **Backend**: TypeScript
 - **Smart Contracts**: Cairo
 - **zkPass**: Zero Knowledge
@@ -72,9 +80,11 @@ SCANGUARD uses a microservices architecture with a web frontend and a backend.
 ## Demo
 
 ### Live Demo
-[Link to live demo](#)
+
+[https://drive.google.com/file/d/1bYUJk5dvuqTX5rOZ1Mrhu1n3wYNAzpwA/view?usp=drivesdk](#)
 
 ### Walkthrough
+
 1. **Access the SCANGUARD Web Application**
    - Open your preferred web browser.
    - Navigate to the SCANGUARD web application by entering the URL: [scanguard-web.com](#).
@@ -99,24 +109,24 @@ SCANGUARD uses a microservices architecture with a web frontend and a backend.
    - If the product is genuine, the web application will display the product information, indicating that the product is verified as authentic.
    - If the product is counterfeit or not found in the database, the web application will return a 404 Error: Not Found indicating that the product is not genuine and may be a counterfeit.
 
-
-
 ## Future Work
+
 - **AI and Machine Learning**: Implementing AI to detect patterns and anomalies in product data for more effective counterfeit detection.
 - **Expanded Database**: Continuously expanding the database to include more products and manufacturers.
 
 ## FAQs
 
 ### Common Questions and Issues
-1. How does SCANGUARD work?
-SCANGUARD works by scanning a product's QR code, which retrieves detailed information about the product and verifies its authenticity.
-2. Which products can be scanned?
-SCANGUARD can scan any product that has a registered QR code in our database, including pharmaceuticals, electronics, cosmetics, and more.
-3. How can I add my product to SCANGUARD?
-Manufacturers with registered company(CAC)  can contact us at scanguard.team@example.com to register their products and get QR codes integrated into our system.
 
+1. How does SCANGUARD work?
+   SCANGUARD works by scanning a product's QR code, which retrieves detailed information about the product and verifies its authenticity.
+2. Which products can be scanned?
+   SCANGUARD can scan any product that has a registered QR code in our database, including pharmaceuticals, electronics, cosmetics, and more.
+3. How can I add my product to SCANGUARD?
+   Manufacturers with registered company(CAC) can contact us at scanguard.team@example.com to register their products and get QR codes integrated into our system.
 
 #### How SCANGUARD Can Help Africans
+
 Counterfeit products are a significant issue in many African markets, affecting various industries including pharmaceuticals, electronics, and consumer goods. SCANGUARD can help Africans in the following ways:
 
 - **Protecting Health and Safety**
@@ -133,8 +143,10 @@ Counterfeit products are a significant issue in many African markets, affecting 
 By addressing these critical issues, SCANGUARD has the potential to make a significant positive impact on the lives of Africans, enhancing safety, economic stability, and overall quality of life.
 
 ## Acknowledgements
+
 1. Our Team Members: For your dedication, hard work, and collaborative spirit. Each member's unique skills and commitment have been key to our success
 2. Hackathon Organizers: For providing an incredible platform that fosters innovation, creativity, and collaboration. Your meticulous planning and support have been invaluable..
 
 ## Conclusion
+
 SCANGUARD represents a pivotal advancement in the fight against counterfeit products. By providing a reliable, user-friendly tool for verifying product authenticity, SCANGUARD empowers consumers, supports legitimate businesses, and aids regulatory bodies in enforcement efforts. This innovative solution not only enhances consumer safety and financial well-being but also contributes to broader economic and social benefits. SCANGUARD's ongoing development, including the integration of AI and an expanding product database, promises to continually improve its effectiveness and reach. As we look to the future, SCANGUARD stands as a testament to the power of technology in fostering safer, more transparent markets worldwide.
