@@ -9,12 +9,18 @@
 ## Team Information
 
 - **Kelvin**: Project Manager
-- **Emmanuel Ejembi**: Lead Developer
+- **Emmanuel Ejembi**: Smart Contract Developer
 - **Flora Osutayi**: UI/UX Designer
 - **Catherine Jonathan**: Frontend Developer
 - **Naomi Emmanuel**: Documentarian
 
-**Contact Information**: scanguard.team@example.com | [GitHub](#) | [LinkedIn](#)
+### Live Demo
+
+[https://drive.google.com/file/d/1bYUJk5dvuqTX5rOZ1Mrhu1n3wYNAzpwA/view?usp=drivesdk](#)
+
+### Slides
+
+[https://www.canva.com/design/DAGIphRBK3k/h8LmKK7pDe3-WFmsfppDXw/edit?utm_content=DAGIphRBK3k&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton]
 
 ## Table of Contents
 
@@ -79,15 +85,11 @@ SCANGUARD uses a microservices architecture with a web frontend and a backend.
 
 ## Demo
 
-### Live Demo
-
-[https://drive.google.com/file/d/1bYUJk5dvuqTX5rOZ1Mrhu1n3wYNAzpwA/view?usp=drivesdk](#)
-
 ### Walkthrough
 
 1. **Access the SCANGUARD Web Application**
    - Open your preferred web browser.
-   - Navigate to the SCANGUARD web application by entering the URL: [scanguard-web.com](#).
+   - Navigate to the SCANGUARD web application by entering the URL: [https://scan-guard.vercel.app/](#).
 2. **Home Screen Overview**
    - Upon accessing the SCANGUARD web application, you will be taken to the Home Screen.
    - The Home Screen displays options to scan a product and view scan history.
