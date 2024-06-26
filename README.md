@@ -14,10 +14,6 @@
 - **Catherine Jonathan**: Frontend Developer
 - **Naomi Emmanuel**: Documentarian
 
-### Live Demo
-
-[https://drive.google.com/file/d/1bYUJk5dvuqTX5rOZ1Mrhu1n3wYNAzpwA/view?usp=drivesdk](#)
-
 ### Slides
 
 [https://www.canva.com/design/DAGIphRBK3k/h8LmKK7pDe3-WFmsfppDXw/edit?utm_content=DAGIphRBK3k&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton]
