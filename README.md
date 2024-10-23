@@ -59,7 +59,7 @@ npm start
 
 #### Onchain
 ```bash
-# Navigate to the frontend directory
+# Navigate to the ochain directory
 cd oncahin
 
 # Run & Install dependencies
