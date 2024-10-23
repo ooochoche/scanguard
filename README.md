@@ -1,69 +1,75 @@
-# **ScanGuard**
+<!-- <h1 style="text-align: center">Scangaurd</h1> -->
 
-**Get only the best of the best with one scan.**
+<!-- <div style="text-align: center ">
+  <img width="996" alt="image" src="">
+</div> -->
 
-## Introduction
+<div style="width: 100%; display: flex; align-items: center; justify-content: center">
+<table >
+  <tr>
+  </tr>
 
-**SCANGUARD** is an innovative solution that allows users to authenticate products by scanning their QR codes. Upon scanning, the entire information of the product appears, indicating whether it is genuine or counterfeit. This helps protect consumers from counterfeit goods, ensuring they receive safe and legitimate products.
+</table></div>
 
-## Table of Contents
+## SCANGUARD
 
-1. [Project Overview](#project-overview)
-2. [Features](#features)
-3. [Future Work](#future-work)
-4. [Conclusion](#conclusion)
+SCANGUARD represents a pivotal advancement in the fight against counterfeit products. By providing a reliable, user-friendly tool for verifying product authenticity, SCANGUARD empowers consumers, supports legitimate businesses, and aids regulatory bodies in enforcement efforts. This innovative solution not only enhances consumer safety and financial well-being but also contributes to broader economic and social benefits.
 
-## Project Overview
+SCANGUARD is ongoing development, including the integration of AI and an expanding product database, promises to continually improve its effectiveness and reach. As we look to the future, SCANGUARD stands as a testament to the power of technology in fostering safer, more transparent markets worldwide.
 
-### Problem Statement
+## Development
+Steps to build and run Scangaurd locally
 
-Counterfeit products are a significant issue, leading to financial losses and potential health risks. There is a need for a reliable method to verify the authenticity of products easily and quickly.
+### Prerequisites
+**_Ensure you have the prerequisites installed before proceeding.
 
-### Solution
+### Install tools
+1. [Install Rust](https://www.rust-lang.org/tools/install)
+2. [Install Scarb](https://docs.swmansion.com/scarb/download.html#install-via-asdf)
+3. [Install npm](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm)
 
-SCANGUARD offers a solution by allowing users to scan a product's QR code to instantly retrieve detailed information about the product's authenticity. This helps consumers make informed decisions and avoid counterfeit goods.
 
-### Impact
+### Build and Run SCANGUARD
 
-SCANGUARD significantly enhances consumer safety by ensuring the authenticity of pharmaceuticals, cosmetics, and food products, thus protecting against health risks and financial losses. By eliminating counterfeit goods, it boosts legitimate businesses, leading to economic growth and increased market confidence. Consumers are empowered to make informed purchasing decisions, and brands can maintain their integrity.
+#### Frontend
+```bash
+# Navigate to the frontend directory
+cd frontend
 
-For regulatory bodies, SCANGUARD simplifies enforcement and provides valuable data to combat counterfeiting effectively. In Africa, SCANGUARD can improve public health, enhance productivity, and drive economic development. Long-term, SCANGUARD fosters sustainable market practices, technological advancement, and boosts confidence in global trade, contributing to overall positive economic and social change.
+# Install dependencies
+npm install
 
-## Market Oppurtunity
+# Run 
+npm run dev
+``` 
 
-- Standing Out from the Competition
-  SCANGUARD stands out because of its advanced technology, easy-to-use interface, and detailed product information. By offering instant verification and comprehensive details about products, SCANGUARD provides a better solution compared to traditional methods of checking product authenticity. This competitive edge positions SCANGUARD as a leading player in the fight against fake goods.
-- Financial Losses
-  Fake goods result in significant financial losses for both consumers and legitimate businesses. Consumers often end up paying for poor-quality products, while businesses lose revenue and suffer damage to their reputation. By ensuring product authenticity, SCANGUARD protects consumers' money and supports the financial health of legitimate businesses.
 
-## Features
+#### Backend
+```bash
+# Navigate to the backend directory
+cd backend
 
-- **QR Code Scanning**: Instantly scan a product's QR code to retrieve information.
-- **User-Friendly Interface**: Easy-to-use interface for quick and seamless scanning.
-- **Secure Database**: Robust backend to ensure data integrity and security.
+# Install dependencies
+npm install
 
-## Future Work
+# Run 
+npm start
+``` 
 
-- **AI and Machine Learning**: Implementing AI to detect patterns and anomalies in product data for more effective counterfeit detection.
-- **Expanded Database**: Continuously expanding the database to include more products and manufacturers.
 
-#### How SCANGUARD Can Help Africans
+#### Onchain
+```bash
+# Navigate to the frontend directory
+cd oncahin
 
-Counterfeit products are a significant issue in many African markets, affecting various industries including pharmaceuticals, electronics, and consumer goods. SCANGUARD can help Africans in the following ways:
+# Run & Install dependencies
+scarb  build
+``` 
 
-- **Protecting Health and Safety**
-  - Counterfeit pharmaceuticals can be particularly dangerous. By using SCANGUARD, consumers can verify the authenticity of medicines, ensuring they are safe and effective.
-- **Safeguarding Finances**
-  - Counterfeit products often appear cheaper but can cost more in the long run due to their poor quality and potential to cause harm. SCANGUARD helps consumers make informed purchases, protecting their financial well-being.
-- **Boosting Confidence in Local Markets**
-  - By reducing the prevalence of counterfeit goods, SCANGUARD can help restore consumer confidence in local markets, encouraging more people to buy locally and supporting the economy.
-- **Supporting Regulatory Compliance**
-  - SCANGUARD can assist governments and regulatory bodies in tracking and managing product authenticity, making it easier to enforce laws and regulations against counterfeit goods.
-- **Empowering Consumers**
-  - With SCANGUARD, consumers are empowered with information. They can make better purchasing decisions, avoid counterfeit products, and hold sellers accountable for the goods they offer.
 
-By addressing these critical issues, SCANGUARD has the potential to make a significant positive impact on the lives of Africans, enhancing safety, economic stability, and overall quality of life.
+## License
 
-## Conclusion
+This project is licensed under the MIT License. See [License](./LICENSE) for more information
 
-SCANGUARD represents a pivotal advancement in the fight against counterfeit products. By providing a reliable, user-friendly tool for verifying product authenticity, SCANGUARD empowers consumers, supports legitimate businesses, and aids regulatory bodies in enforcement efforts. This innovative solution not only enhances consumer safety and financial well-being but also contributes to broader economic and social benefits. SCANGUARD is ongoing development, including the integration of AI and an expanding product database, promises to continually improve its effectiveness and reach. As we look to the future, SCANGUARD stands as a testament to the power of technology in fostering safer, more transparent markets worldwide.
+## Contributing
+For more info and guidance on contributing, join the contributors Telegram group: https://t.me/+p5JGJ4C8lCw5NjNk
