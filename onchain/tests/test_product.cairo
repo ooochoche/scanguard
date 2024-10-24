@@ -1,13 +1,13 @@
 use core::option::OptionTrait;
-use core::traits::{TryInto, Into};
+use core::traits::TryInto;
 use core::starknet::SyscallResultTrait;
 use openzeppelin::access::ownable::interface::{IOwnableDispatcher, IOwnableDispatcherTrait};
-use starknet::{ContractAddress, class_hash::ClassHash, contract_address_const};
+use starknet::ContractAddress;
 use snforge_std::{
-    declare, ContractClassTrait, start_cheat_caller_address, stop_cheat_caller_address
+    declare, ContractClassTrait, DeclareResultTrait, start_cheat_caller_address,
+    stop_cheat_caller_address
 };
 use scanguard::interfaces::IProduct::{IProductsDispatcher, IProductsDispatcherTrait};
-use scanguard::base::types::{ProductParams};
 
 
 const ZERO_ADDR: felt252 = 0x0;
@@ -16,7 +16,7 @@ const USER_ONE_ADDR: felt252 = 0x2;
 
 fn __setup__(owner: felt252) -> ContractAddress {
     // deploy Prodct contract
-    let product_contract = declare("Product").unwrap();
+    let product_contract = declare("Product").unwrap().contract_class();
     let mut product_constructor_calldata = array![owner];
     let (product_contract_address, _) = product_contract
         .deploy(@product_constructor_calldata)
