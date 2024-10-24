@@ -10,7 +10,7 @@ import {
 	ScanIcon,
 	TelegramIcon,
 	TwitterIcon,
-} from "@/assets/icons";
+} from "@/assets/icons/icons";
 import AddressBar from "@/components/Addressbar";
 import ScanProduct from "@/components/Scan";
 import ConnectModal from "@/components/ConnectModal";
