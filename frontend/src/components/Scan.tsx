@@ -4,7 +4,7 @@ import {
 	ScanIcon2,
 	StarIcon,
 	StarIcon2,
-} from "@/assets/icons";
+} from "@/assets/icons/icons";
 import { CONTRACT_ADDR, formatDate, formatIpfsHash, zkPassVerify } from "@/lib/config";
 import { fetchIpfsFile } from "@/services/apiService";
 import { useAccount, useContractRead } from "@starknet-react/core";

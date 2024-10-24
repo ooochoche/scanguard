@@ -4,7 +4,7 @@ import {
 	ScanIcon2,
 	StarIcon,
 	StarIcon2,
-} from "@/assets/icons";
+} from "@/assets/icons/icons";
 import { abi } from "@/lib/abi";
 import { CONTRACT_ADDR, formatIpfsHash, zkPassVerify } from "@/lib/config";
 import { fetchIpfsFile } from "@/services/apiService";
