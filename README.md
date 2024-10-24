@@ -60,7 +60,7 @@ npm start
 #### Onchain
 ```bash
 # Navigate to the ochain directory
-cd oncahin
+cd onchain
 
 # Run & Install dependencies
 scarb  build
