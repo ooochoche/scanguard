@@ -4,7 +4,7 @@ import {
 	ScanIcon,
 	TelegramIcon,
 	TwitterIcon,
-} from "../../assets/icons";
+} from "../../assets/icons/icons";
 import Link from "next/link";
 
 export default function Home() {

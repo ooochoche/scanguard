@@ -9,7 +9,7 @@ import {
 import {
   BackwardIcon
 } from "@heroicons/react/24/outline";
-import { BackIcon2 } from "@/assets/icons";
+import { BackIcon2 } from "@/assets/icons/icons";
 
 type ModalProps = {
 	open: boolean;

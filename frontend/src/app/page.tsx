@@ -6,7 +6,7 @@ import {
 	ScanIcon,
 	TelegramIcon,
 	TwitterIcon,
-} from "../assets/icons";
+} from "../assets/icons/icons";
 import Link from "next/link";
 import { useEffect, useMemo, useState } from "react";
 import Modal from "./Modal";
