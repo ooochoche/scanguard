@@ -2,10 +2,12 @@ name: Linting, formatting and Build on PR
 
 on:
     push:
-        paths: [ "scan-guard/**" ]
+        branches: [main, dev]
+        paths: [ "frontend/**" ]
     pull_request:
-        branches: [ "dev" ]
-        paths: [ "scan-guard/**" ]
+        branches: [main, dev]
+        paths: [ "frontend/**" ]
+    workflow_dispatch:
 
 jobs:
     Frontend-Continuous-Integreation:
@@ -13,7 +15,7 @@ jobs:
 
         defaults:
             run:
-                working-directory: ./scan-guard
+                working-directory: frontend
 
         steps:
         -   name: Checkout the Repository
@@ -40,7 +42,7 @@ jobs:
 
         defaults:
             run:
-                working-directory: ./backend
+                working-directory: backend
 
         steps:
         -   name: Checkout the Repository
