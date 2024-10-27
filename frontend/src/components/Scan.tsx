@@ -5,11 +5,7 @@ import {
   StarIcon,
   StarIcon2,
 } from '@/assets/icons/icons';
-import {
-  CONTRACT_ADDR,
-  formatDate,
-  formatIpfsHash,
-} from '@/lib/config';
+import { CONTRACT_ADDR, formatDate, formatIpfsHash } from '@/lib/config';
 import { fetchIpfsFile } from '@/services/apiService';
 import { useAccount, useContractRead } from '@starknet-react/core';
 import React, { useEffect, useMemo, useState } from 'react';
