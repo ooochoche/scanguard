@@ -1,5 +1,4 @@
-use starknet::{ContractAddress};
-use scanguard::base::types::{ProductParams};
+use scanguard::base::types::ProductParams;
 
 #[starknet::interface]
 pub trait IProducts<TContractState> {

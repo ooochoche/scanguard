@@ -1,16 +1,11 @@
-use starknet::{ContractAddress};
-
 #[starknet::contract]
 pub mod Product {
-    use core::clone::Clone;
-    use core::option::OptionTrait;
     use core::num::traits::zero::Zero;
-    use core::traits::{TryInto, Into};
-    use core::byte_array::ByteArrayTrait;
-    use starknet::{ContractAddress, get_caller_address};
+    use core::starknet::storage::{Map, StorageMapReadAccess, StorageMapWriteAccess};
+    use starknet::ContractAddress;
     use scanguard::interfaces::IProduct::IProducts;
-    use scanguard::base::types::{ProductParams};
-    use scanguard::base::errors::Errors::{ZERO_ADDRESS_CALLER, ZERO_ADDRESS_OWNER, NOT_OWNER};
+    use scanguard::base::types::ProductParams;
+    use scanguard::base::errors::Errors::ZERO_ADDRESS_CALLER;
     use openzeppelin::access::ownable::OwnableComponent;
 
     component!(path: OwnableComponent, storage: ownable, event: OwnableEvent);
@@ -25,7 +20,7 @@ pub mod Product {
     struct Storage {
         #[substorage(v0)]
         ownable: OwnableComponent::Storage,
-        products: LegacyMap::<felt252, ByteArray>,
+        products: Map::<felt252, ByteArray>,
     }
 
     #[event]

@@ -1,0 +1,36 @@
+name: CI Backend
+
+on:
+  push:
+    branches: [main, dev]
+    paths: 
+      - "backend/**" 
+  pull_request:
+    branches: [main, dev]
+  workflow_dispatch:
+
+jobs:
+  lint-and-build-backend:
+    runs-on: ubuntu-latest
+
+    defaults:
+      run:
+        working-directory: backend
+
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Install dependencies
+        run: npm install --legacy-peer-deps
+
+      - name: Run linting check
+        run: npm run lint:check
+
+      - name: Run formatting check
+        run: npm run format:check
+
+      - name: Build
+        run: npm run build

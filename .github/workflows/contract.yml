@@ -1,0 +1,37 @@
+name: CI Contracts
+
+on:
+  push:
+    branches: [main, dev]
+    paths:
+      - "onchain/**"
+  pull_request:
+    branches: [main, dev]
+  workflow_dispatch:
+
+jobs:
+  test-starknet-contracts:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: software-mansion/setup-scarb@v1
+        with:
+          tool-versions: onchain/.tool-versions
+      # starknet foundry setup require rust
+      - name: Set Up Stable Rust Toolchain
+        uses: actions-rs/toolchain@v1
+        with:
+          profile: minimal
+          toolchain: stable
+      - name: Install universal sierra compiler
+        shell: bash
+        run: |
+          curl -L https://raw.githubusercontent.com/software-mansion/universal-sierra-compiler/master/scripts/install.sh | sh
+          echo "/root/.local/bin" >> ${GITHUB_PATH}
+      - uses: foundry-rs/setup-snfoundry@v3
+        with:
+          tool-versions: onchain/.tool-versions
+      - run: scarb build
+        working-directory: onchain
+      - run: snforge test
+        working-directory: onchain
