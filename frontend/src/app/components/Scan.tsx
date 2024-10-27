@@ -6,7 +6,7 @@ import {
   StarIcon2,
 } from '@/assets/icons/icons';
 import { abi } from '@/lib/abi';
-import { CONTRACT_ADDR, formatIpfsHash, zkPassVerify } from '@/lib/config';
+import { CONTRACT_ADDR, formatIpfsHash } from '@/lib/config';
 import { fetchIpfsFile } from '@/services/apiService';
 import {
   useAccount,
@@ -51,7 +51,6 @@ export default function ScanProduct() {
     const fetchData = async () => {
       try {
         if (data) {
-          zkPassVerify();
           const ipfsResults = await fetchIpfsFile(
             formatIpfsHash(data.toString())
           );

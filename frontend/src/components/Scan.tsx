@@ -9,7 +9,6 @@ import {
   CONTRACT_ADDR,
   formatDate,
   formatIpfsHash,
-  zkPassVerify,
 } from '@/lib/config';
 import { fetchIpfsFile } from '@/services/apiService';
 import { useAccount, useContractRead } from '@starknet-react/core';
@@ -56,7 +55,6 @@ export default function ScanProduct() {
       try {
         if (data) {
           let hash: string = (data as any).ipfs_hash;
-          // zkPassVerify();
           const ipfsResults = await fetchIpfsFile(hash);
           setProduct(ipfsResults);
         }
