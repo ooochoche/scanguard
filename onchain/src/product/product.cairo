@@ -29,6 +29,16 @@ pub mod Product {
         #[flat]
         OwnableEvent: OwnableComponent::Event,
         VerifyProduct: VerifyProduct,
+        ProductRegistered: ProductRegistered
+    }
+
+    /// @notice Emitted when a product is registered
+    /// @param product_id the ID of the product
+    /// @param ipfs_hash
+    #[derive(Drop, starknet::Event)]
+    pub struct ProductRegistered {
+        pub product_id: felt252,
+        pub ipfs_hash: ByteArray
     }
 
     #[constructor]
@@ -48,8 +58,9 @@ pub mod Product {
 
         fn register_product(ref self: ContractState, product_id: felt252, ipfs_hash: ByteArray) {
             self.ownable.assert_only_owner();
-            self.products.write(product_id, ipfs_hash);
+            self.products.write(product_id.clone(), ipfs_hash.clone());
+
+            self.emit(ProductRegistered { product_id, ipfs_hash, });
         }
     }
 }
-
