@@ -8,6 +8,7 @@ use snforge_std::{
     stop_cheat_caller_address, spy_events, EventSpyAssertionsTrait
 };
 use scanguard::interfaces::IProduct::{IProductsDispatcher, IProductsDispatcherTrait};
+use scanguard::base::types::{VerifyProduct};
 use scanguard::product::product::{Product::Event, Product::ProductRegistered};
 
 
@@ -65,6 +66,7 @@ fn test_register_product_with_incorrect_owner() {
 fn test_register_product_() {
     let product_contract_address = __setup__(OWNER_ADDR);
     let product_dispatcher = IProductsDispatcher { contract_address: product_contract_address };
+    let mut spy = spy_events();
 
     start_cheat_caller_address(product_contract_address, OWNER_ADDR.try_into().unwrap());
 
@@ -77,6 +79,16 @@ fn test_register_product_() {
     assert(ipfs_hash == verified_product.ipfs_hash, 'no products found');
 
     stop_cheat_caller_address(product_contract_address);
+
+    spy
+        .assert_emitted(
+            @array![
+                (
+                    product_contract_address,
+                    Event::VerifyProduct(VerifyProduct { product_id, ipfs_hash })
+                )
+            ]
+        );
 }
 
 #[test]
@@ -112,6 +124,7 @@ fn test_register_product_event_emission() {
 fn test_register_multiple_products() {
     let product_contract_address = __setup__(OWNER_ADDR);
     let product_dispatcher = IProductsDispatcher { contract_address: product_contract_address };
+    let mut spy = spy_events();
 
     start_cheat_caller_address(product_contract_address, OWNER_ADDR.try_into().unwrap());
 
@@ -132,5 +145,22 @@ fn test_register_multiple_products() {
     assert(ipfs_hash_two == verified_product_two.ipfs_hash, 'no product found');
 
     stop_cheat_caller_address(product_contract_address);
-}
 
+    spy
+        .assert_emitted(
+            @array![
+                (
+                    product_contract_address,
+                    Event::VerifyProduct(
+                        VerifyProduct { product_id: product_one_id, ipfs_hash: ipfs_hash_one }
+                    )
+                ),
+                (
+                    product_contract_address,
+                    Event::VerifyProduct(
+                        VerifyProduct { product_id: product_two_id, ipfs_hash: ipfs_hash_two }
+                    )
+                )
+            ]
+        );
+}

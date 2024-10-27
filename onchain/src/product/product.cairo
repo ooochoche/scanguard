@@ -4,7 +4,7 @@ pub mod Product {
     use core::starknet::storage::{Map, StorageMapReadAccess, StorageMapWriteAccess};
     use starknet::ContractAddress;
     use scanguard::interfaces::IProduct::IProducts;
-    use scanguard::base::types::ProductParams;
+    use scanguard::base::types::{ProductParams, VerifyProduct};
     use scanguard::base::errors::Errors::ZERO_ADDRESS_CALLER;
     use openzeppelin::access::ownable::OwnableComponent;
 
@@ -28,6 +28,7 @@ pub mod Product {
     pub enum Event {
         #[flat]
         OwnableEvent: OwnableComponent::Event,
+        VerifyProduct: VerifyProduct,
         ProductRegistered: ProductRegistered
     }
 
@@ -48,15 +49,10 @@ pub mod Product {
 
     #[abi(embed_v0)]
     impl ProductImpl of IProducts<ContractState> {
-        fn verify(self: @ContractState, product_id: felt252) -> ProductParams {
+        fn verify(ref self: ContractState, product_id: felt252) -> ProductParams {
             let ipfs_hash = self.products.read(product_id);
 
-            if (ipfs_hash != "0") {
-                let product = ProductParams { product_id: product_id, ipfs_hash: ipfs_hash };
-
-                return product;
-            }
-
+            self.emit(VerifyProduct { product_id: product_id, ipfs_hash: ipfs_hash.clone() });
             ProductParams { product_id: product_id, ipfs_hash: ipfs_hash }
         }
 
