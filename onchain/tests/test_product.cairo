@@ -5,9 +5,10 @@ use openzeppelin::access::ownable::interface::{IOwnableDispatcher, IOwnableDispa
 use starknet::ContractAddress;
 use snforge_std::{
     declare, ContractClassTrait, DeclareResultTrait, start_cheat_caller_address,
-    stop_cheat_caller_address
+    stop_cheat_caller_address, spy_events, EventSpyAssertionsTrait
 };
 use scanguard::interfaces::IProduct::{IProductsDispatcher, IProductsDispatcherTrait};
+use scanguard::product::product::{Product::Event, Product::ProductRegistered};
 
 
 const ZERO_ADDR: felt252 = 0x0;
@@ -76,6 +77,35 @@ fn test_register_product_() {
     assert(ipfs_hash == verified_product.ipfs_hash, 'no products found');
 
     stop_cheat_caller_address(product_contract_address);
+}
+
+#[test]
+fn test_register_product_event_emission() {
+    let product_contract_address = __setup__(OWNER_ADDR);
+    let product_dispatcher = IProductsDispatcher { contract_address: product_contract_address };
+    let mut spy = spy_events();
+
+    start_cheat_caller_address(product_contract_address, OWNER_ADDR.try_into().unwrap());
+
+    let product_id: felt252 = 1;
+    let ipfs_hash: ByteArray = "QmVqyWcuoBpHvt5tT5Gw9eJz2qYJyGKw4NY4yEdFcopK69";
+
+    product_dispatcher.register_product(product_id, ipfs_hash.clone());
+
+    let verified_product = product_dispatcher.verify(product_id);
+    assert(ipfs_hash == verified_product.ipfs_hash, 'no products found');
+
+    stop_cheat_caller_address(product_contract_address);
+
+    spy
+        .assert_emitted(
+            @array![
+                (
+                    product_contract_address,
+                    Event::ProductRegistered(ProductRegistered { product_id, ipfs_hash })
+                )
+            ]
+        );
 }
 
 #[test]

@@ -25,7 +25,7 @@ pub mod Product {
 
     #[event]
     #[derive(Drop, starknet::Event)]
-    enum Event {
+    pub enum Event {
         #[flat]
         OwnableEvent: OwnableComponent::Event,
         ProductRegistered: ProductRegistered
@@ -35,9 +35,9 @@ pub mod Product {
     /// @param product_id the ID of the product
     /// @param ipfs_hash
     #[derive(Drop, starknet::Event)]
-    struct ProductRegistered {
-        product_id: felt252,
-        ipfs_hash: ByteArray
+    pub struct ProductRegistered {
+        pub product_id: felt252,
+        pub ipfs_hash: ByteArray
     }
 
     #[constructor]
