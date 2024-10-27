@@ -1,8 +1,4 @@
-import axios from "axios";
-
-
-
-
+import axios from 'axios';
 
 export const fetchIpfsFile = async (file: string) => {
   try {
@@ -10,7 +6,9 @@ export const fetchIpfsFile = async (file: string) => {
     if (response.status === 200) {
       return response.data;
     } else {
-      throw new Error(`Failed to fetch IPFS file with status: ${response.status}`);
+      throw new Error(
+        `Failed to fetch IPFS file with status: ${response.status}`
+      );
     }
   } catch (error) {
     console.error('Error fetching IPFS file:', error);
