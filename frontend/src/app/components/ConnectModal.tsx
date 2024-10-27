@@ -1,7 +1,7 @@
-import Image from "next/image";
-import GenericModal from "./GenericModal";
-import { Connector, useConnect } from "@starknet-react/core";
-import { useEffect, useState } from "react";
+import Image from 'next/image';
+import GenericModal from './GenericModal';
+import { Connector, useConnect } from '@starknet-react/core';
+import { useEffect, useState } from 'react';
 
 type Props = {
   isOpen: boolean;
@@ -26,12 +26,12 @@ const Wallet = ({
   closeModal: (e: React.MouseEvent<HTMLButtonElement>) => void;
 }) => {
   const { connect } = useConnect();
-  const isSvg = src?.startsWith("<svg");
+  const isSvg = src?.startsWith('<svg');
 
   function handleConnectWallet(e: React.MouseEvent<HTMLButtonElement>): void {
     connect({ connector });
     closeModal(e);
-    localStorage.setItem("lastUsedConnector", connector.name);
+    localStorage.setItem('lastUsedConnector', connector.name);
   }
 
   return (
@@ -44,7 +44,7 @@ const Wallet = ({
           <div
             className="h-full w-full object-cover rounded-[5px]"
             dangerouslySetInnerHTML={{
-              __html: src ?? "",
+              __html: src ?? '',
             }}
           />
         ) : (
@@ -144,7 +144,7 @@ const ConnectModal = ({ isOpen, onClose }: Props) => {
                   alt="text"
                   loader={loader}
                   src={
-                    "https://media.istockphoto.com/id/1084096262/vector/concept-of-mobile-payments-wallet-connected-with-mobile-phone.jpg?s=612x612&w=0&k=20&c=noILf6rTUyxN41JnmeFhUmqQWiCWoXlg0zCLtcrabD4="
+                    'https://media.istockphoto.com/id/1084096262/vector/concept-of-mobile-payments-wallet-connected-with-mobile-phone.jpg?s=612x612&w=0&k=20&c=noILf6rTUyxN41JnmeFhUmqQWiCWoXlg0zCLtcrabD4='
                   }
                   width={100}
                   height={100}
@@ -167,7 +167,7 @@ const ConnectModal = ({ isOpen, onClose }: Props) => {
                   alt="text"
                   loader={loader}
                   src={
-                    "https://media.licdn.com/dms/image/D4E12AQFyWdLwXcJu3Q/article-cover_image-shrink_720_1280/0/1687854784940?e=2147483647&v=beta&t=nNDH-9XEcVYcb1PAc3S78ndQze0126KPOSZmnmMERNg"
+                    'https://media.licdn.com/dms/image/D4E12AQFyWdLwXcJu3Q/article-cover_image-shrink_720_1280/0/1687854784940?e=2147483647&v=beta&t=nNDH-9XEcVYcb1PAc3S78ndQze0126KPOSZmnmMERNg'
                   }
                   width={100}
                   height={100}
