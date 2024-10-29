@@ -5,4 +5,4 @@ export interface Product {
     manufacturer: string;
     manufactureDate: string;
     expiryDate: string;
-}  
+}

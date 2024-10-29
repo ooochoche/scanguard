@@ -1,7 +1,7 @@
 import { Injectable } from '@nestjs/common';
 import { ProductDto } from './product.dto';
 import { Product } from 'src/interfaces/Product';
-import { generateProductId } from 'src/common/generateProductId';
+import { generateProductId } from 'src/common/utils/generateProductId';
 
 @Injectable()
 export class ProductsService {
