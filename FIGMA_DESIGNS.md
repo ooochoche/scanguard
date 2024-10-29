@@ -5,3 +5,6 @@
 (Responsive UI design)[https://www.figma.com/design/3rwFuarH26rtJEt35FIjtp/Responsive--UI-ScanGuard?node-id=0-1&t=FKf6xltBYioMgUXh-1]
 
 [Product Overview Screens ](https://www.figma.com/design/hQo5SlzXDcyOgXH7fGaGsg/ScanGuard-Product-overview-screens?node-id=0-1&t=BfXZvClReUj3d9nm-1)
+
+
+[Dashboard Screens ](https://www.figma.com/design/hQo5SlzXDcyOgXH7fGaGsg/ScanGuard-Product-overview-screens?node-id=0-1&t=BfXZvClReUj3d9nm-1)
