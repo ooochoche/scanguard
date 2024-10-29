@@ -7,7 +7,7 @@ import { generateProductId } from 'src/common/utils/generateProductId';
 export class ProductsService {
     private readonly PINATA_JWT = process.env.PINATA_JWT || '';
 
-    async pinToIPFS(product: Product): Promise<any> {
+    async pinToIPFS(product: Product) {
         const url = 'https://api.pinata.cloud/pinning/pinFileToIPFS';
 
         const blob = new Blob([JSON.stringify(product, null, 2)], {
