@@ -26,8 +26,12 @@ describe('ProductsService', () => {
         manufactureDate: '2023-01-01',
         expiryDate: '2025-01-01',
       };
-      
-      jest.spyOn(service, 'pinToIPFS').mockResolvedValue({ IpfsHash: 'QmUiPq1dRygSjwCBAqxvwaJxbGVFyHmPmSrL4YiytJFfkh' });
+
+      jest
+        .spyOn(service, 'pinToIPFS')
+        .mockResolvedValue({
+          IpfsHash: 'QmUiPq1dRygSjwCBAqxvwaJxbGVFyHmPmSrL4YiytJFfkh',
+        });
 
       const result = await service.submitProduct(dto);
       expect(result).toEqual('QmUiPq1dRygSjwCBAqxvwaJxbGVFyHmPmSrL4YiytJFfkh');
@@ -42,9 +46,13 @@ describe('ProductsService', () => {
         expiryDate: '2025-01-01',
       };
 
-      jest.spyOn(service, 'pinToIPFS').mockRejectedValue(new Error('Error uploading to IPFS'));
+      jest
+        .spyOn(service, 'pinToIPFS')
+        .mockRejectedValue(new Error('Error uploading to IPFS'));
 
-      await expect(service.submitProduct(dto)).rejects.toThrow('Error uploading to IPFS');
+      await expect(service.submitProduct(dto)).rejects.toThrow(
+        'Error uploading to IPFS'
+      );
     });
   });
 });

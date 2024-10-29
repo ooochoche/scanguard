@@ -38,10 +38,14 @@ describe('ProductsController', () => {
         expiryDate: '2025-01-01',
       };
 
-      jest.spyOn(service, 'submitProduct').mockResolvedValue('QmUiPq1dRygSjwCBAqxvwaJxbGVFyHmPmSrL4YiytJFfkh');
+      jest
+        .spyOn(service, 'submitProduct')
+        .mockResolvedValue('QmUiPq1dRygSjwCBAqxvwaJxbGVFyHmPmSrL4YiytJFfkh');
 
       const result = await controller.submitProduct(dto);
-      expect(result).toEqual({ ipfs_hash: 'QmUiPq1dRygSjwCBAqxvwaJxbGVFyHmPmSrL4YiytJFfkh' });
+      expect(result).toEqual({
+        ipfs_hash: 'QmUiPq1dRygSjwCBAqxvwaJxbGVFyHmPmSrL4YiytJFfkh',
+      });
     });
 
     it('should throw an error if submission fails', async () => {
@@ -53,10 +57,11 @@ describe('ProductsController', () => {
         expiryDate: '2025-01-01',
       };
 
-      jest.spyOn(service, 'submitProduct').mockRejectedValue(new Error('Error uploading to IPFS'));
+      jest
+        .spyOn(service, 'submitProduct')
+        .mockRejectedValue(new Error('Error uploading to IPFS'));
 
       await expect(controller.submitProduct(dto)).rejects.toThrow();
     });
   });
-
 });

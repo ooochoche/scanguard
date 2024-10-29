@@ -5,48 +5,50 @@ import { generateProductId } from 'src/common/utils/generateProductId';
 
 @Injectable()
 export class ProductsService {
-    private readonly PINATA_JWT = process.env.PINATA_JWT || '';
+  private readonly PINATA_JWT = process.env.PINATA_JWT || '';
 
-    async pinToIPFS(product: Product) {
-        const url = 'https://api.pinata.cloud/pinning/pinFileToIPFS';
+  async pinToIPFS(product: Product) {
+    const url = 'https://api.pinata.cloud/pinning/pinFileToIPFS';
 
-        const blob = new Blob([JSON.stringify(product, null, 2)], {
-        type: 'application/json',
-        });
+    const blob = new Blob([JSON.stringify(product, null, 2)], {
+      type: 'application/json',
+    });
 
-        const file = new File([blob], `${product.product_id}.txt`);
-        const data = new FormData();
-        data.append('file', file);
+    const file = new File([blob], `${product.product_id}.txt`);
+    const data = new FormData();
+    data.append('file', file);
 
-        const response = await fetch(url, {
-        method: 'POST',
-        headers: {
-            Authorization: `Bearer ${this.PINATA_JWT}`,
-        },
-        body: data,
-        });
+    const response = await fetch(url, {
+      method: 'POST',
+      headers: {
+        Authorization: `Bearer ${this.PINATA_JWT}`,
+      },
+      body: data,
+    });
 
-        console.log("Response: ", await response);
+    console.log('Response: ', await response);
 
-        if (!response.ok) {
-            const errorBody = await response.json();
-            console.error("Error Response:", errorBody);
-            throw new Error(`Failed to upload to IPFS: ${errorBody.message || response.statusText}`);
-        }
-
-        return await response.json();
+    if (!response.ok) {
+      const errorBody = await response.json();
+      console.error('Error Response:', errorBody);
+      throw new Error(
+        `Failed to upload to IPFS: ${errorBody.message || response.statusText}`
+      );
     }
 
-    async submitProduct(createProductDto: ProductDto): Promise<string> {
-        const product_id = generateProductId(10);
-        const productData = { product_id, ...createProductDto };
-    
-        try {
-            const pin = await this.pinToIPFS(productData);
-            return pin.IpfsHash;
-        } catch (error) {
-            console.log(error);
-            throw new Error('Error uploading to IPFS');
-        }
+    return await response.json();
+  }
+
+  async submitProduct(createProductDto: ProductDto): Promise<string> {
+    const product_id = generateProductId(10);
+    const productData = { product_id, ...createProductDto };
+
+    try {
+      const pin = await this.pinToIPFS(productData);
+      return pin.IpfsHash;
+    } catch (error) {
+      console.log(error);
+      throw new Error('Error uploading to IPFS');
     }
+  }
 }
