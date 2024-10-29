@@ -1,12 +1,13 @@
 import { Injectable } from '@nestjs/common';
 import { ProductDto } from './product.dto';
-import { generateProductId } from '../utils';
+import { Product } from 'src/interfaces/Product';
+import { generateProductId } from 'src/common/generateProductId';
 
 @Injectable()
 export class ProductsService {
     private readonly PINATA_JWT = process.env.PINATA_JWT || '';
 
-    async pinToIPFS(product: any): Promise<any> {
+    async pinToIPFS(product: Product): Promise<any> {
         const url = 'https://api.pinata.cloud/pinning/pinFileToIPFS';
 
         const blob = new Blob([JSON.stringify(product, null, 2)], {
@@ -44,6 +45,7 @@ export class ProductsService {
             const pin = await this.pinToIPFS(productData);
             return pin.IpfsHash;
         } catch (error) {
+            console.log(error);
             throw new Error('Error uploading to IPFS');
         }
     }
