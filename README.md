@@ -73,3 +73,8 @@ This project is licensed under the MIT License. See [License](./LICENSE) for mor
 
 ## Contributing
 For more info and guidance on contributing, join the contributors Telegram group: https://t.me/+p5JGJ4C8lCw5NjNk
+
+## Docs
+For more information about ScanGuard.
+https://hackmd.io/@xZ4BOZ5TTTy1I0ZQHXFOkg/rk8p7TAeJe
+
