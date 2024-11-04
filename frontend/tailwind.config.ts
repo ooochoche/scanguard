@@ -12,6 +12,8 @@ const config: Config = {
         hero: "url('/hero-bg.png')",
         producer: "url('/producer-bg.png')",
         'hero-2': "url('/hero-bg-mobile.png')",
+        'product-overview': "url('/productOverviewBg.png')",
+        'product-overview-mobile': "url('/productOverviewMobileBg.png')",
         footer: "url('/footer.png')",
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
         'gradient-conic':
