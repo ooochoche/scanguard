@@ -1,21 +1,21 @@
-"use client"
-import { NoticeIcon, FlagIcon, CheckmarkIcon } from "../../assets/icons/icons";
-import { useState } from "react";
-import { createPortal } from "react-dom";
-import FlagProductModal from "./FlagProductModal";
+'use client';
+import { NoticeIcon, FlagIcon, CheckmarkIcon } from '../../assets/icons/icons';
+import { useState } from 'react';
+import { createPortal } from 'react-dom';
+import FlagProductModal from './FlagProductModal';
 
 export default function ProductPreview() {
   const [isFlagging, setIsFlagging] = useState(false);
   const product = {
-    name: "Jaicatace Juice",
-    authenticityStatus: "Not Authentic",
-    manufacturer: "Jaicatace Beverages Ltd.",
-    dateOfScan: "October 17, 2024",
-    batchNumber: "JT2024-BX-0923",
+    name: 'Jaicatace Juice',
+    authenticityStatus: 'Not Authentic',
+    manufacturer: 'Jaicatace Beverages Ltd.',
+    dateOfScan: 'October 17, 2024',
+    batchNumber: 'JT2024-BX-0923',
     timesScanned: 153,
     trustScore: 90,
     reportedIssues: 2,
-    image: "product-overview.png",
+    image: 'product-overview.png',
   };
 
   return (
@@ -59,12 +59,12 @@ export default function ProductPreview() {
               </h3>
               <div
                 className={`text-[24px] md:text-[32px] md:leading-[39px] font-semibold ${
-                  product.trustScore <= 30 && "text-[#FF2828]"
+                  product.trustScore <= 30 && 'text-[#FF2828]'
                 } ${
                   product.trustScore > 30 &&
                   product.trustScore <= 80 &&
-                  "text-[#F9F9F9]"
-                } ${product.trustScore > 80 && "text-[#28FF37]"}`}
+                  'text-[#F9F9F9]'
+                } ${product.trustScore > 80 && 'text-[#28FF37]'}`}
               >
                 {product.trustScore}%
               </div>
@@ -98,7 +98,7 @@ export default function ProductPreview() {
                 {product.name}
               </h2>
               <h5 className="text-base leading-6 text-[#ACACAC]">
-                Authenticity status:{" "}
+                Authenticity status:{' '}
                 <span className="text-[#F9F9F9]">
                   {product.authenticityStatus}
                 </span>
@@ -131,7 +131,7 @@ export default function ProductPreview() {
             <h4 className="text-base leading-6 text-[#ACACAC]">
               Times Scanned:
               <span className="text-[#F9F9F9]">
-                {" "}
+                {' '}
                 {product.timesScanned} times
               </span>
             </h4>
@@ -142,7 +142,7 @@ export default function ProductPreview() {
             <h4 className="text-base leading-6 text-[#ACACAC]">
               Reported Issues:
               <span className="text-[#F9F9F9]">
-                {" "}
+                {' '}
                 {product.reportedIssues} flags
               </span>
             </h4>

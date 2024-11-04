@@ -1,8 +1,8 @@
-"use client";
+'use client';
 
-import Link from "next/link";
-import { useEffect, useMemo, useState } from "react";
-import { useAccount } from "@starknet-react/core";
+import Link from 'next/link';
+import { useEffect, useMemo, useState } from 'react';
+import { useAccount } from '@starknet-react/core';
 import {
   DiscordIcon,
   LearnmoreIcon,
@@ -10,12 +10,12 @@ import {
   ScanIcon,
   TelegramIcon,
   TwitterIcon,
-} from "@/assets/icons/icons";
-import AddressBar from "@/components/Addressbar";
-import ScanProduct from "@/components/Scan";
-import ConnectModal from "@/components/ConnectModal";
-import { useParams } from "next/navigation";
-import ProductPreview from "../../components/ProductPreview";
+} from '@/assets/icons/icons';
+import AddressBar from '@/components/Addressbar';
+import ScanProduct from '@/components/Scan';
+import ConnectModal from '@/components/ConnectModal';
+import { useParams } from 'next/navigation';
+import ProductPreview from '../../components/ProductPreview';
 
 export default function ScanPage() {
   const { address } = useAccount();

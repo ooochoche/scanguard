@@ -1,36 +1,36 @@
-import { FlagIcon } from "@/assets/icons/icons";
-import React, { useState } from "react";
+import { FlagIcon } from '@/assets/icons/icons';
+import React, { useState } from 'react';
 
 export default function FlagProductModal({ setOpen }: { setOpen: () => void }) {
-  const [selectedOption, setSelectedOption] = useState("");
-  const [customOption, setCustomOption] = useState("");
+  const [selectedOption, setSelectedOption] = useState('');
+  const [customOption, setCustomOption] = useState('');
 
   const flagOptions = [
     {
-      option: "Product quality does not match the description.",
+      option: 'Product quality does not match the description.',
     },
     {
-      option: "Brand logo or details seem incorrect.",
+      option: 'Brand logo or details seem incorrect.',
     },
     {
-      option: "Suspected counterfeit.",
+      option: 'Suspected counterfeit.',
     },
     {
       option: "I've seen similar counterfeit products elsewhere.",
     },
     {
-      option: "Packaging looks different from the original.",
+      option: 'Packaging looks different from the original.',
     },
   ];
 
   const handleOptionChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setSelectedOption(e.target.value);
-    setCustomOption("");
+    setCustomOption('');
   };
 
   const handleCustomInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setCustomOption(e.target.value);
-    setSelectedOption("");
+    setSelectedOption('');
   };
 
   return (
