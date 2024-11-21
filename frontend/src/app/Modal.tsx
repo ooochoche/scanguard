@@ -7,7 +7,7 @@ import {
   TransitionChild,
 } from '@headlessui/react';
 import { BackwardIcon } from '@heroicons/react/24/outline';
-import { BackIcon2 } from '@/assets/icons/icons';
+import { BackIcon2 } from '@/assets/icons';
 
 type ModalProps = {
   open: boolean;

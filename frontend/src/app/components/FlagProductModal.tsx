@@ -1,4 +1,4 @@
-import { FlagIcon } from '@/assets/icons/icons';
+import { FlagIcon } from '@/assets/icons';
 import React, { useState } from 'react';
 
 export default function FlagProductModal({ setOpen }: { setOpen: () => void }) {
