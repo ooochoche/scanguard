@@ -1,6 +1,6 @@
-import { PhoneImage, PhoneImageMobile } from "@/assets/landing-page";
-import { poppins, roboto } from "../fonts";
-import ScanButton from "./ScanButton";
+import { PhoneImage, PhoneImageMobile } from '@/assets/landing-page';
+import { poppins, roboto } from '../fonts';
+import ScanButton from './ScanButton';
 
 const HeroSection = () => (
   <div className="relative px-6 md:px-0">
@@ -30,7 +30,7 @@ const HeroCTA = (props: any) => (
       text-base font-normal leading-7 font-roboto`}
     >
       <p className="hidden md:block">
-        This is a shared liquidity market smart contract which{" "}
+        This is a shared liquidity market smart contract which{' '}
         <br className="hidden md:block" /> is used by multiple website to
         provide the users the <br className="hidden md:block" /> best possible
         experience.
@@ -54,7 +54,7 @@ const HeroImage = () => (
 
 const SocialProof = () => (
   <div className="flex justify-center items-center shadow-2xl rounded-2xl mb-4 mt-6 md:mt-0">
-    {["Users", "Products", "Producers"].map((name, index, array) => (
+    {['Users', 'Products', 'Producers'].map((name, index, array) => (
       <SocialProofItem
         key={name}
         name={name}

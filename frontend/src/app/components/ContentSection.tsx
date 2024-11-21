@@ -7,9 +7,9 @@ import {
   ScanGuardEdgeMobile,
   ScanList,
   ScanListMobile,
-} from "@/assets/landing-page";
-import { poppins, roboto } from "../fonts";
-import ScanButton from "./ScanButton";
+} from '@/assets/landing-page';
+import { poppins, roboto } from '../fonts';
+import ScanButton from './ScanButton';
 
 const ContentSection = () => (
   <section className="my-[7.5rem] md:my-[6.5rem]">
@@ -27,14 +27,14 @@ const ContentHeader = () => (
         className={`${poppins.variable} hidden md:block md:text-2xl lg:text-4xl
           font-semibold font-poppins`}
       >
-        Introducing ScanGuard, a trusted platform designed to{" "}
+        Introducing ScanGuard, a trusted platform designed to{' '}
         <br className="hidden md:block" /> safeguard consumers from counterfeit
         goods <br className="hidden md:block" /> with blockchain technology
       </h2>
       <h2
         className={`${poppins.variable} text-2xl font-medium leading-9 md:hidden font-poppins`}
       >
-        Introducing ScanGuard, a <br /> trusted platform designed to <br />{" "}
+        Introducing ScanGuard, a <br /> trusted platform designed to <br />{' '}
         safeguard consumers from <br /> counterfeit goods <br /> with blockchain
         technology
       </h2>
@@ -44,7 +44,7 @@ const ContentHeader = () => (
         className={`${roboto.variable} hidden md:block text-textFaded text-base font-normal font-roboto`}
       >
         SCANGUARD is a project aiming to protect consumers from counterfeit
-        products by allowing easy authentication with a{" "}
+        products by allowing easy authentication with a{' '}
         <br className="hidden lg:block" /> QR code scan. Why? Because the rise
         of counterfeit products is exploiting trusted brands, damaging
         reputations, and <br className="hidden lg:block" />

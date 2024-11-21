@@ -269,7 +269,7 @@ export const BarcodeIcon = (props: any) => (
   >
     <mask
       id="mask0_379_199"
-      style={{ maskType: "alpha" }}
+      style={{ maskType: 'alpha' }}
       maskUnits="userSpaceOnUse"
       x="0"
       y="0"
@@ -286,9 +286,6 @@ export const BarcodeIcon = (props: any) => (
     </g>
   </svg>
 );
-
-
-
 
 export const NoticeIcon = (props: any) => (
   <svg
@@ -368,5 +365,3 @@ export const FlagIcon = (props: any) => (
     />
   </svg>
 );
-
-

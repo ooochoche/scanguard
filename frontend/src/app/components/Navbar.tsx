@@ -1,7 +1,7 @@
-import { BrandImage } from "@/assets/landing-page";
-import { roboto } from "../fonts";
-import Link from "next/link";
-import ConnectWallet from "./ConnectWallet";
+import { BrandImage } from '@/assets/landing-page';
+import { roboto } from '../fonts';
+import Link from 'next/link';
+import ConnectWallet from './ConnectWallet';
 
 const NavBar = (props: any) => (
   <nav
@@ -35,13 +35,13 @@ const NavLinks = () => (
     className={`${roboto.variable} text-sm text-textPrimary leading-normal
       font-roboto uppercase hidden py-3 gap-6 items-center lg:flex`}
   >
-    {["home", "anout", "contact"].map((item, index, array) => (
+    {['home', 'anout', 'contact'].map((item, index, array) => (
       <li
         key={item}
-        className={`${index !== array.length - 1 ? "border-r-2 border-primary/[.12] pr-6" : ""}
+        className={`${index !== array.length - 1 ? 'border-r-2 border-primary/[.12] pr-6' : ''}
           `}
       >
-        <Link href={`${item === "home" ? "/" : item}`}>{item}</Link>
+        <Link href={`${item === 'home' ? '/' : item}`}>{item}</Link>
       </li>
     ))}
   </ul>

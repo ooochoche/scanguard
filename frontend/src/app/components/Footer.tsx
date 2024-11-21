@@ -1,6 +1,6 @@
-import { poppins, roboto } from "../fonts";
-import Link from "next/link";
-import { GithubIcon, TelegramIcon, TwitterIcon } from "@/assets/icons";
+import { poppins, roboto } from '../fonts';
+import Link from 'next/link';
+import { GithubIcon, TelegramIcon, TwitterIcon } from '@/assets/icons';
 
 const Footer = () => (
   <footer className="bg-[#303030] lg:bg-[#171717]">
@@ -42,9 +42,9 @@ const Footer = () => (
 const FooterIcons = () => (
   <div className="flex gap-4 mt-2">
     {[
-      { url: "https://x.com/SgOnStarknet", icon: <TwitterIcon /> },
-      { url: "https://t.me/+p5JGJ4C8lCw5NjNk", icon: <TelegramIcon /> },
-      { url: "https://github.com/nexlabsweb3/scanguard", icon: <GithubIcon /> },
+      { url: 'https://x.com/SgOnStarknet', icon: <TwitterIcon /> },
+      { url: 'https://t.me/+p5JGJ4C8lCw5NjNk', icon: <TelegramIcon /> },
+      { url: 'https://github.com/nexlabsweb3/scanguard', icon: <GithubIcon /> },
     ].map(({ url, icon }) => (
       <div
         key={url}
