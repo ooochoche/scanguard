@@ -1,5 +1,5 @@
 'use client';
-import { NoticeIcon, FlagIcon, CheckmarkIcon } from '../../assets/icons/icons';
+import { NoticeIcon, FlagIcon, CheckmarkIcon } from '../../assets/icons';
 import { useState } from 'react';
 import { createPortal } from 'react-dom';
 import FlagProductModal from './FlagProductModal';
