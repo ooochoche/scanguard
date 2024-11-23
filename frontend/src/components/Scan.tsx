@@ -46,8 +46,6 @@ export default function ScanProduct() {
     watch: true,
   });
 
-  
-
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -74,9 +72,6 @@ export default function ScanProduct() {
       setOpen(true);
     }
   }, [payload]);
-
-
-
 
   return (
     <>
